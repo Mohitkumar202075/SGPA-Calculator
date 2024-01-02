@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+        content="width=device-height, initial-scale=1" />
+
+    <title>2023 SGPA 4th sem</title>
+    <script>
+        function gradePoint(g) {
+            if (g == "A++" || g == "a++") {
+                return 10;
+            } else if (g == "A+" || g == "a+") {
+                return 9;
+            } else if (g == "A" || g == "a") {
+                return 8.5;
+            } else if (g == "B+" || g == "b+") {
+                return 8;
+            } else if (g == "B" || g == "b") {
+                return 7.5;
+            } else if (g == "C+" || g == "c+") {
+                return 7;
+            } else if (g == "C" || g == "c") {
+                return 6.5;
+            } else if (g == "D+" || g == "d+") {
+                return 6;
+            } else if (g == "D" || g == "d") {
+                return 5.5;
+            } else if (g == "E+" || g == "e+") {
+                return 5;
+            } else if (g == "E" || g == "e") {
+                return 4;
+            } else if (g == "F" || g == "f") {
+                return 0;
+            }
+        }
+
+        function calculate() {
+            let TC = gradePoint(document.getElementById("TC").value);
+            let MATHS = gradePoint(document.getElementById("MATHS").value);
+            let MPI = gradePoint(document.getElementById("MPI").value);
+            let DBMS = gradePoint(document.getElementById("DBMS").value);
+            let TOC = gradePoint(document.getElementById("TOC").value);
+            let DCCN = gradePoint(document.getElementById("DCCN").value);
+            let MPIL = gradePoint(document.getElementById("MPIL").value);
+            let DBMSL = gradePoint(document.getElementById("DBMSL").value);
+            let NPL = gradePoint(document.getElementById("NPL").value);
+            let LSPL = gradePoint(document.getElementById("LSPL").value);
+            let JAVAL = gradePoint(document.getElementById("JAVAL").value);
+            let DECA = gradePoint(document.getElementById("DECA").value);
+
+            TC *= 2;
+            console.log(TC);
+            MATHS *= 3;
+            console.log(MATHS);
+            MPI *= 3;
+            console.log(MPI);
+            DBMS *= 3;
+            console.log(DBMS);
+            TOC *= 3;
+            console.log(TOC);
+            DCCN *= 3;
+            console.log(DCCN);
+            MPIL *= 1;
+            console.log(MPIL);
+            DBMSL *= 1.5;
+            console.log(DBMSL);
+            NPL *= 1.5;
+            console.log(NPL);
+            LSPL *= 1;
+            console.log(LSPL);
+            JAVAL *= 1;
+            console.log(JAVAL);
+            DECA *= 0.5;
+            console.log(DECA);
+
+            let totalGradePoints = TC + MATHS + MPI + DBMS + TOC + DCCN + MPIL + DBMSL + NPL + LSPL + JAVAL + DECA;
+            console.log(totalGradePoints);
+            let RESULT = totalGradePoints / 23.5;
+            console.log(RESULT);
+
+            document.getElementById("res").value = RESULT;
+        }
+    </script>
+
+
+    <style>
+        #calc {
+            background-color: aqua;
+            font-size: 100%;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        label {
+
+            color: aliceblue;
+            margin-top: 5%;
+            font-weight: bold;
+        }
+
+        input {
+            background-color: rgb(221, 239, 137);
+            margin: 1% 0 2% 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(5, 13, 76);
+            font-size: larger;
+        }
+
+        #res {
+            font-size: 200%;
+            width: 150px;
+            background-color: rgb(217, 237, 198);
+            color: red;
+        }
+
+        #h {
+            padding-top: 10%;
+            color: red;
+            font-size: xx-large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .bottum {
+            color: aliceblue;
+        }
+
+        .name {
+            color: rgb(205, 43, 22);
+        }
+    </style>
+
+
+</head>
+
+<body id="bd">
+    <b id="h">Fourth Sem SGPA Calculator</b>
+    <br>
+
+    <label>Technical Communication : </label>
+    <input type="text" id="TC">
+    <br>
+    <label>Discrete Mathematics Structure : </label>
+    <input type="text" id="MATHS">
+    <br>
+    <label>Microprocessor & Interfaces : </label>
+    <input type="text" id="MPI">
+    <br>
+    <label>Database Management System : </label>
+    <input type="text" id="DBMS">
+
+    <br>
+    <label>Theory of Computation : </label>
+    <input type="text" id="TOC">
+
+    <br>
+    <label> Data Communication and Computer Networks : </label>
+    <input type="text" id="DCCN">
+    <br>
+    <label>Microprocessor & Interfaces Lab : </label>
+    <input type="text" id="MPIL">
+
+    <br>
+    <label>Database Management System Lab : </label>
+    <input type="text" id="DBMSL">
+
+    <br>
+    <label>Network Programming Lab : </label>
+    <input type="text" id="NPL">
+    <br>
+    <br>
+    <label>Linux Shell Programming : </label>
+    <input type="text" id="LSPL">
+    <br>
+    <label>Java Lab :</label>
+    <input type="text" id="JAVAL">
+    <br>
+    <label>DECA :</label>
+    <input type="text" id="DECA">
+    <br>
+
+    <input type="button" value="Calculate" id="calc" onclick="calculate()">
+
+    <p style="color:red; font-size:large">Your SGPA is</p>
+    <input type="text" id="res" disabled>
+
+    <h4 class="bottum">Made by <span class="name">Mohit Kumar</span> (PCE21CS506)</h4>
+
+</body>
+
+
+
+</html>
